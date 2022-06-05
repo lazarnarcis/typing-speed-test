@@ -3,6 +3,7 @@ let text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat e
 let time = 60;
 let timeHTML = document.querySelector("#time");
 let writeHere = "";
+let letterToTaste = text[0].toLowerCase();
 
 function showTime () {
     if (time == 0) {
@@ -24,15 +25,13 @@ div.appendChild(paragraph);
 document.body.addEventListener("keyup", function (e) {
     if (time == 0) {
         alert("Time is up!");
-        return;
     } else {
         text = text.toLowerCase();
-        let key = e.key;
-        key = key.toLowerCase();
+        let key = e.key.toLowerCase();
         for (let y = 0; y < text.length; y++) {
-            if (key == text[y]) {
-                console.log(1);
-                return;
+            if (key == text[y] == letterToTaste) {
+                letterToTaste = text[y + 1];
+                console.log(letterToTaste);
             }
         }
     }
