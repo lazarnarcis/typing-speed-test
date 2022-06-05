@@ -28,6 +28,7 @@ document.body.addEventListener("keyup", function (e) {
     } else {
         text = text.toLowerCase();
         let key = e.key;
+        key = key.toLowerCase();
         for (let y = 0; y < text.length; y++) {
             if (key == text[y]) {
                 console.log(1);
