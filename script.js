@@ -31,7 +31,7 @@ document.body.addEventListener("keyup", function (e) {
         let key = e.key.toLowerCase();
 
         if (key == initialLetter) {
-            paragraph.innerHTML = paragraph.innerHTML.replaceAt(pos, `<span style='background-color: red;'>${key}</span>`);
+            paragraph.innerHTML = text.replaceAt(pos, `<span style='background-color: red;'>${key}</span>`);
             console.log(initialLetter);
             console.log(pos);
             pos++;
