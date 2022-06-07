@@ -32,7 +32,7 @@ document.body.addEventListener("keyup", function (e) {
         let key = e.key.toLowerCase();
 
         if (key == initialLetter) {
-            textToShow.innerText += initialLetter;
+            textToShow.innerHTML += initialLetter;
             pos++;
             initialLetter = text[pos];
 
