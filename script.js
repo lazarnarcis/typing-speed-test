@@ -3,7 +3,9 @@ let text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat e
 let time = 60;
 let timeHTML = document.querySelector("#time");
 let writeHere = "";
-let letterToTaste = text[0].toLowerCase();
+text = text.toLowerCase();
+let pos = 0;
+let initialLetter = text[0];
 
 function showTime () {
     if (time == 0) {
@@ -18,7 +20,7 @@ function showTime () {
 showTime();
 
 let paragraph = document.createElement("p");
-paragraph.innerText = text;
+paragraph.innerHTML = text;
 paragraph.id = "textToWrite";
 div.appendChild(paragraph);
 
@@ -26,13 +28,20 @@ document.body.addEventListener("keyup", function (e) {
     if (time == 0) {
         alert("Time is up!");
     } else {
-        text = text.toLowerCase();
         let key = e.key.toLowerCase();
-        for (let y = 0; y < text.length; y++) {
-            if (key == text[y] == letterToTaste) {
-                letterToTaste = text[y + 1];
-                console.log(letterToTaste);
-            }
+
+        if (key == initialLetter) {
+            paragraph.innerHTML = paragraph.innerHTML.replaceAt(pos, `<span style='background-color: red;'>${key}</span>`);
+            console.log(initialLetter);
+            console.log(pos);
+            pos++;
+            initialLetter = text[pos];
         }
     }
 });
+
+String.prototype.replaceAt=function(index, char) {
+    var a = this.split("");
+    a[index] = char;
+    return a.join("");
+}
