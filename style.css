@@ -1,4 +1,11 @@
 #textToWrite {
     opacity: 50%;
-    font-size: 60px;
+    font-size: 25px;
+}
+
+#textToShow {
+    color: grey;
+    background: lightgrey;
+    padding: 20px;
+    font-size: 50px;
 }
