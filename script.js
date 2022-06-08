@@ -1,5 +1,5 @@
 let div = document.querySelector("#speedTest");
-let text = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo beatae adipisci distinctio aspernatur omnis temporibus eveniet excepturi nostrum deserunt, quia perferendis totam impedit animi corrupti voluptas hic nesciunt doloribus expedita!";
+let text = "My name is Narcis Lazar, I am a web developer, I live in Romania and I started with web programming in 2017. W3Schools was the site that taught me the basics of programming, I recommend it with confidence.";
 let time = 60;
 let timeHTML = document.querySelector("#time");
 let writeHere = "";
@@ -32,14 +32,14 @@ document.body.addEventListener("keyup", function (e) {
         let key = e.key.toLowerCase();
 
         if (key == initialLetter) {
-            textToShow.innerHTML += initialLetter;
-            pos++;
-            initialLetter = text[pos];
-
             if (textToShow.innerText == text) {
                 alert(`Good job! You have done in ${time} seconds!`);
                 time = 0;
+                return;
             }
+            textToShow.innerHTML += initialLetter;
+            pos++;
+            initialLetter = text[pos];
         }
     }
 });
