@@ -32,14 +32,18 @@ document.body.addEventListener("keyup", function (e) {
         let key = e.key.toLowerCase();
 
         if (key == initialLetter) {
-            if (textToShow.innerText == text) {
-                alert(`Good job! You have done in ${time} seconds!`);
-                time = 0;
-                return;
-            }
             textToShow.innerHTML += initialLetter;
             pos++;
             initialLetter = text[pos];
         }
     }
 });
+
+let interval = setInterval(() => {
+    if (textToShow.innerHTML == text) {
+        alert(`Good job! You have done in ${time} seconds!`);
+        time = 0;
+        clearInterval(interval);
+        return;
+    }
+}, 250);
