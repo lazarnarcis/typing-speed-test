@@ -8,3 +8,12 @@
     background: lightgrey;
     font-size: 50px;
 }
+
+#time {
+    text-align: center;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

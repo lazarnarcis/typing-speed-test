@@ -13,7 +13,7 @@ function showTime () {
         timeHTML.innerText = "Time is up or you're done!";
         return;
     }
-    timeHTML.innerText = time + "s";
+    timeHTML.innerText = "Remaining time: " + time + "s";
     time--;
     setTimeout(showTime, 1000);
 }
