@@ -41,7 +41,7 @@ document.body.addEventListener("keyup", function (e) {
 
 let interval = setInterval(() => {
     if (textToShow.innerHTML == text) {
-        alert(`Good job! You have done in ${time} seconds!`);
+        alert(`Good job! You have done in ${60 - time} seconds!`);
         time = 0;
         clearInterval(interval);
         return;
