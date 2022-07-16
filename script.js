@@ -1,6 +1,6 @@
 let div = document.querySelector("#speedTest");
 let text = "My name is Narcis Lazar, I am a web developer, I live in Romania and I started with web programming in 2017. W3Schools was the site that taught me the basics of programming, I recommend it with confidence.";
-let time = 60;
+let seconds = 59, miliseconds = 99, time;
 let timeHTML = document.querySelector("#time");
 let writeHere = "";
 text = text.toLowerCase();
@@ -9,16 +9,23 @@ let initialLetter = text[0];
 let textToShow = document.querySelector("#textToShow");
 
 function showTime () {
-    if (time == 0) {
+    miliseconds--;
+    if (miliseconds <= 9) {
+        miliseconds = "0" + miliseconds;
+    }
+    if (miliseconds == 0) {
+        seconds--;
+        miliseconds = 99;
+    }
+    time = seconds + "." + miliseconds;
+    timeHTML.innerText = "Remaining time: " + time + "s";
+    if (seconds == 0) {
         timeHTML.innerText = "Time is up or you're done!";
         return;
     }
-    timeHTML.innerText = "Remaining time: " + time + "s";
-    time--;
-    setTimeout(showTime, 1000);
 }
 
-showTime();
+let interval2 = setInterval(showTime, 10);
 
 let paragraph = document.createElement("p");
 paragraph.innerHTML = text;
