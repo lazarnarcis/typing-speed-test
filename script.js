@@ -10,7 +10,7 @@ let textToShow = document.querySelector("#textToShow");
 
 function showTime () {
     if (seconds == 0 && miliseconds == 0) {
-        timeHTML.innerText = "Time is up or you're done!";
+        timeHTML.innerText = "Time is up!";
         return;
     }
     if (miliseconds <= 9) {
@@ -34,7 +34,7 @@ div.appendChild(paragraph);
 
 document.body.addEventListener("keyup", function (e) {
     if (time == 0) {
-        timeHTML.innerHTML = "Time is up or you're done!";
+        timeHTML.innerHTML = "Time is up!";
     } else {
         let key = e.key.toLowerCase();
 
