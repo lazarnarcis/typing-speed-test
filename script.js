@@ -34,7 +34,7 @@ div.appendChild(paragraph);
 
 document.body.addEventListener("keyup", function (e) {
     if (time == 0) {
-        alert("Time is up or you're done!");
+        timeHTML.innerHTML = "Time is up or you're done!";
     } else {
         let key = e.key.toLowerCase();
 
@@ -48,9 +48,10 @@ document.body.addEventListener("keyup", function (e) {
 
 let interval = setInterval(() => {
     if (textToShow.innerHTML == text) {
-        alert(`Good job! You have done in ${60 - time} seconds!`);
+        timeHTML.innerHTML = `Good job! You have done in ${60 - time} seconds!`;
         time = 0;
         clearInterval(interval);
+        clearInterval(interval2);
         return;
     }
 }, 250);
