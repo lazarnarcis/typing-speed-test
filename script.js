@@ -9,7 +9,10 @@ let initialLetter = text[0];
 let textToShow = document.querySelector("#textToShow");
 
 function showTime () {
-    miliseconds--;
+    if (seconds == 0 && miliseconds == 0) {
+        timeHTML.innerText = "Time is up or you're done!";
+        return;
+    }
     if (miliseconds <= 9) {
         miliseconds = "0" + miliseconds;
     }
@@ -19,10 +22,7 @@ function showTime () {
     }
     time = seconds + "." + miliseconds;
     timeHTML.innerText = "Remaining time: " + time + "s";
-    if (seconds == 0) {
-        timeHTML.innerText = "Time is up or you're done!";
-        return;
-    }
+    miliseconds--;
 }
 
 let interval2 = setInterval(showTime, 10);
